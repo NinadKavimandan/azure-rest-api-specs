@@ -5327,7 +5327,8 @@
           "type": "string",
           "enum": [
             "HttpOnly",
-            "HttpsOnly"
+            "HttpsOnly",
+            "MatchRequest"
           ],
           "x-ms-enum": {
             "name": "ForwardingProtocol",
