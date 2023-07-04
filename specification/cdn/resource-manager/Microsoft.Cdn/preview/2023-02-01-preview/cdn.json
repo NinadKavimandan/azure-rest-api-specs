@@ -4796,7 +4796,7 @@
             "UrlSigning",
             "OriginGroupOverride",
             "RouteConfigurationOverride",
-            "CustomErrorPageUrl",
+            "CustomErrorPage",
             "OverrideResponseStatusCode"
           ],
           "x-ms-enum": {
@@ -5280,7 +5280,7 @@
     "DeliveryRuleCustomErrorPageAction": {
       "description": "Defines the custom error page url action for the delivery rule. Only applicable to Frontdoor Standard/Premium Profiles.",
       "type": "object",
-      "x-ms-discriminator-value": "CustomErrorPageUrl",
+      "x-ms-discriminator-value": "CustomErrorPage",
       "allOf": [
         {
           "$ref": "#/definitions/DeliveryRuleAction"
@@ -5313,9 +5313,27 @@
             "modelAsString": true
           }
         },
-        "customErrorPageUrl": {
+        "errorPagePath": {
           "description": "Defines the url to redirect to as the custom error page",
           "type": "string"
+        },
+        "originGroup": {
+          "description": "defines the OriginGroup that would override the DefaultOriginGroup on route.",
+          "type": "object",
+          "$ref": "#/definitions/ResourceReference"
+        },
+        "forwardingProtocol": {
+          "description": "Protocol this rule will use when forwarding traffic to backends.",
+          "type": "string",
+          "enum": [
+            "HttpOnly",
+            "HttpsOnly",
+            "MatchRequest"
+          ],
+          "x-ms-enum": {
+            "name": "ForwardingProtocol",
+            "modelAsString": true
+          }
         }
       }
     },
