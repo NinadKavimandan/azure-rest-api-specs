@@ -4743,12 +4743,7 @@
           "description": "Describes operator to be matched",
           "type": "string",
           "enum": [
-            "Equal",
-            "Contains",
-            "LessThan",
-            "LessThanOrEqual",
-            "GreaterThan",
-            "GreaterThanOrEqual"
+            "Equal"
           ],
           "x-ms-enum": {
             "name": "Operator",
